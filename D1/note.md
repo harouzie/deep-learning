@@ -1,13 +1,20 @@
 __Course: Introduction to Deep Learning__
 # __Day 1: Introduction to Deep Learning__
+_Tuesday, January 3rd, 2023_
 
 - Distinguish the differences between traditional ML and Deep Learning (capabilities, objective, problem, why, models, ...)
 
 | ML     | DL |
 | :---      | :---    |
-| need human interaction with data to ensure model fits well        | need less human involment or no need at all
-| only works on moderate size dataset, performance decrease when dataset size increase       | work better in massive dataset, but cannot adapt small scale data
+| need human interaction with data to ensure model fits well, the feature extraction      | need less human involment or no need at all
+| can only return acceptable results because it works with human-engineering features| can extract complex and rich feature pattern, hence working better ML models |
+| only for structured data| can perform well also on unstructured data (texts, voices, ...)  |
+| only works on moderate size dataset, performance decrease when dataset size increase       | work better in massive dataset, but cannot adapt small scale data 
+| required CPU only | required high-computing resources (GPU, TPU)|
 | Algorithms that learn from structured data to predict outputs and discover patterns in that data. | Algorithms based on highly complex neural networks that mimic the way a human brain works to detect patterns in large unstructured data sets|
+
+### __what is deep learning?__
+> Deep Learning is a subfield of machine learning concerned with algorithms inspired by the structure and function of the brain called artificial neural networks.
 
 ## __What should be learnt in Machine Learning?__
 - Understanding ML models
@@ -81,16 +88,23 @@ _**Two ways to customize a pretrained model:**_
 - Keras
 - or Nvidia GeForce Experience if you have a green team GPU
 
+## __Topics of this course__
+- Basic Neural Networks
+- Deep Belief Network
+- Convolutional Neural Networks
+- Recurrent Neural Networks and Long Short Term Memory
+- Transformer Models
+- Generative Adversarial Networks
+- Reinforcement Learning and Deep RL
 
-
-## Course assessment
+## __Course assessment__
 - Middle exam (20%)
     - Project and presentation
 - Final exam (50%)
     - Project and presentation
 - Progress exercises (30%)
 
-## Summary
+## __Summary__
 - What is machine learning?
     - objective and characteristics
     - types of machine learning
