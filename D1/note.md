@@ -8,7 +8,7 @@ _Tuesday, January 3rd, 2023_
 | :---      | :---    |
 | need human interaction with data to ensure model fits well, the feature extraction      | need less human involment or no need at all
 | can only return acceptable results because it works with human-engineering features| can extract complex and rich feature pattern, hence working better ML models |
-| only for structured data| can perform well also on unstructured data (texts, voices, ...)  |
+| not too good for unstructured data | can perform well also on unstructured data (texts, voices, ...)  |
 | only works on moderate size dataset, performance decrease when dataset size increase       | work better in massive dataset, but cannot adapt small scale data 
 | required CPU only | required high-computing resources (GPU, TPU)|
 | Algorithms that learn from structured data to predict outputs and discover patterns in that data. | Algorithms based on highly complex neural networks that mimic the way a human brain works to detect patterns in large unstructured data sets|
@@ -67,7 +67,7 @@ print(f"test acc {test_acc}")
 predictions = model.predict(test_images)
 ```
 
-### __Fine-tuning model__ 
+### __Tuning a pretrained model__ 
 
 A pre-trained model is a saved network that was previously trained on a large dataset, typically on a large-scale image-classification task. You either use the pretrained model as is or use transfer learning to customize this model to a given task.
 
@@ -111,3 +111,34 @@ _**Two ways to customize a pretrained model:**_
 - Distinguish between conventional machine learning and deep learning?
 - What is the difference between developing a traditional ML system
 and a deep learning system?
+
+
+# Lecture 2: Basic of Neural Networks
+## __Review__
+- MLP 
+- Logistic Regression
+- Gradient Descent Algorithm
+- Mean Squared Error
+- How to define a loss function 
+
+### __Logistic Regression__ 
+- __Loss function__:
+The loss function for linear regression is squared loss. The loss function for logistic regression is Log Loss, which is defined as follows:
+$$ \text{Log Loss} = \sum_{(x,y)\in D} -y\log(y') - (1 - y)\log(1 - y') $$ 
+
+where:
+
+ - $(x, y) \in D $ is the data set containing many labeled examples, which are $(x, y)$ pairs.
+ - $y$ is the label in a labeled example. Since this is logistic regression, every value of $y$ must either be 0 or 1.
+ - $y'$ is the predicted value (somewhere between 0 and 1), given the set of features in $x$.
+
+> __cross-entropy loss function__
+
+* __*Kullback–Leibler divergence*__
+
+    In mathematical statistics, the Kullback–Leibler divergence (also called relative entropy and I-divergence), $ {\displaystyle D_{\text{KL}}(P\parallel Q)} $, is a type of statistical distance: a measure of how one probability distribution P is different from a second, reference probability distribution Q. A simple interpretation of the KL divergence of P from Q is the expected excess surprise from using Q as a model when the actual distribution is P
+    
+## __Homework__
+1. GD for Linear Regression
+2. GD for clsfication w/ Logistic Reg
+3. 
