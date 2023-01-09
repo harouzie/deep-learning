@@ -141,4 +141,15 @@ where:
 ## __Homework__
 1. GD for Linear Regression
 2. GD for clsfication w/ Logistic Reg
-3. 
+
+Present about Learning Stage for Multilayer Perceptron for Regression and classification Problems:
+- Backpropagation algorithms with Mean Square Error (MSE) Cost function (for Regression) and Cross Entropy Cost Function (for classification).
+- Appropriate Codes
+- Applying for house pricing and adult datasets 
+
+Put your answer on Github and submit the link
+ 
+> + MLP regression - MSE 
+> + MLP classification - cross entropy 
+> + dataset - adult + housing
+> => 4 models
