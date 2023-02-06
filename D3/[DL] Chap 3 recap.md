@@ -82,22 +82,59 @@ An ML system can work with data from many different sources. They have different
 
 ---
 
-## 2. Data Formats 
+## 2. Data Formats
 
 <font size="5">
 Since your data comes from multiple sources with different access patterns, storing your data isn’t always straightforward and, for some cases, can be costly. It’s important to think about how the data will be used in the future so that the format you use will make sense.
+</font>
 
 ![bg right:33%](https://images.unsplash.com/photo-1480843669328-3f7e37d196ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80)
 
 ---
 
-Format Binary/Text Human-readable Example use cases
-JSON Text Yes Everywhere
-CSV Text Yes Everywhere
-Parquet Binary No Hadoop, Amazon Redshift
-Avro Binary primary No Hadoop
-Protobuf Binary primary No Google, TensorFlow (TFRecord)
-Pickle Binary No Python, PyTorch serialization
+## 2. Data Formats [1]
+
+| Format | Binary/Text | Human-readable | Example use cases |
+|--------|-------------|----------------|-------------------|
+| JSON      | Text  | Yes  | Everywhere |
+| CSV       | Text  | Yes | Everywhere |
+| _Parquet_   | _Binary_            | _No_ | _Hadoop, Amazon Redshift_       |
+| Avro      | Binary primary    | No | Hadoop|
+| Protobuf  | Binary primary| No | Google | TensorFlow (TFRecord) |
+| Pickle    | Binary        | No | Python| PyTorch serialization |
+
+---
+
+## 2. Data Formats [2]
+
+__JSON (JavaScript Object Notation)__
+
+<font size ="5">
+
+```json
+{
+    "firstName": "Boatie",
+    "lastName": "McBoatFace",
+    "isVibing": true,
+    "age": 12,
+    "address": {
+        "streetAddress": "12 Ocean Drive",
+        "city": "Port Royal",
+        "postalCode": "10021-3100"
+    }
+}
+```
+
+The same data can also be stored in an unstructured blob of text like the following:
+
+```json
+{
+    "text": "Boatie McBoatFace, aged 12, is vibing, at 12 Ocean Drive, Port Royal,
+    10021-3100"
+}
+```
+
+</font>
 
 ---
 
@@ -116,6 +153,7 @@ Pickle Binary No Python, PyTorch serialization
 ## 6. Batch Processing Versus Stream Processing
 
 ---
+
 
 ## 7. Summary
 
