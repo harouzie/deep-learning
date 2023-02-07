@@ -130,8 +130,7 @@ The same data can also be stored in an unstructured blob of text like the follow
 
 ```json
 {
-    "text": "Boatie McBoatFace, aged 12, is vibing, at 12 Ocean Drive, Port Royal,
-    10021-3100"
+    "text": "Boatie McBoatFace, aged 12, is vibing, at 12 Ocean Drive, Port Royal, 10021-3100"
 }
 ```
 
@@ -197,11 +196,16 @@ Row-major formats allow faster data writes.
 ## 3. Data Models
 
 <font size="5">
-Data models describe how data is represented. Consider cars in the real world. In a database, a car can be described using its make, its model, its year, its color, and
-its price
+Data models describe <b>how data is represented</b>. Consider cars in the real world. In a database, a car can be described using its make, its model, its year, its color, and its price
 </font>
 
 ![bg right:33%](https://images.unsplash.com/photo-1557562645-4eee56b29bc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80)
+
+---
+
+## 3. Data Models [1]
+
+### Relational Modeld
 
 ---
 
@@ -217,7 +221,6 @@ its price
 
 ---
 
-
 ## 7. Summary
 
 <font size="5">
@@ -230,6 +233,6 @@ This chapter is built on the foundations established in Chapter 2 around the imp
 
 <p align="center">
     <font size="10">
-        Thank you for your attention
+        <b>Thank you for your attention</b>
     </font>
 </p>
