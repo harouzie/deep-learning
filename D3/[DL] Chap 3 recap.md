@@ -3,6 +3,7 @@ marp: true
 paginate: true 
 header: Ton Duc Thang University 
 footer: Introduction to Deep Learning \n Spring 2023
+math: mathjax
 ---
 
 
@@ -138,7 +139,69 @@ The same data can also be stored in an unstructured blob of text like the follow
 
 ---
 
+## 2. Data Formats [3]
+
+__JSON (JavaScript Object Notation)__
+
+JSON is __*ubiquitous*__, the pain it causes can also be felt everywhere. Once you’ve committed the data in your JSON files to a schema, it’s pretty painful to retrospectively go back to change the schema. JSON files are text files, which means they take up a lot of space, as we’ll see in the section $\text{\color{red}“Text Versus Binary Format”}$
+
+![bg left:40%](https://images.unsplash.com/photo-1610986602538-431d65df4385?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1507&q=80)
+
+---
+
+## 2. Data Formats [4]
+
+### Row-Major Versus Column-Major Format
+
+The two formats that are common and represent two distinct paradigms are __CSV__ and __Parquet__.
+
+- __CSV (comma-separated values)__ is row-major, which means consecutive elements in a row are stored next to each other in memory.
+- __Parquet__ is column-major, which means consecutive elements in a column are stored next to each other.
+
+---
+
+## 2. Data Formats [5]
+
+### Row-Major Versus Column-Major Format
+
+![](https://www.dremio.com/wp-content/uploads/2022/04/chart-1024x412.png)
+
+---
+
+## 2. Data Formats [6]
+
+![Row-major versus column-major formats](data_order.png)
+
+---
+
+## 2. Data Formats [7]
+
+Column-major formats allow _**flexible column-based reads**_, especially if your data is large with thousands, if not millions, of features
+
+Row-major formats allow faster data writes.
+
+> Overall, row-major formats are better when you have to do a lot of writes, whereas column-major ones are better when you have to do a lot of column-based reads.
+
+---
+
+## 2. Data Formats [8]
+
+### Text Versus Binary Format
+
+- `CSV` and `JSON` are _text files_, whereas `Parquet` files are _binary files_
+
+- Binary files are more compact
+
+---
+
 ## 3. Data Models
+
+<font size="5">
+Data models describe how data is represented. Consider cars in the real world. In a database, a car can be described using its make, its model, its year, its color, and
+its price
+</font>
+
+![bg right:33%](https://images.unsplash.com/photo-1557562645-4eee56b29bc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80)
 
 ---
 
