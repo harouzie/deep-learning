@@ -55,7 +55,7 @@ An ML system can work with data from many different sources. They have different
 ## 1. Data Sources [1]
 
 - __user input data__: data explicitly input by users. 🧝‍♀️🙎✍️
-    > User input can be text, images, videos, uploaded files, etc. But if it’s even remotely possible for users to input wrong data, they are going to do it.
+    >User input can be text, images, videos, uploaded files, etc. But if it’s even remotely possible for users to input wrong data, they are going to do it.
 
     > User input data can be _**easily malformatted**_.
 
@@ -185,11 +185,26 @@ Row-major formats allow faster data writes.
 
 ## 2. Data Formats [8]
 
+
+![img](npvspd.png)
+
+<font size=4>
+(Left) Iterating a pandas DataFrame by column takes 0.07 seconds but
+iterating the same DataFrame by row takes 2.41 seconds. (Right) When you convert the
+same DataFrame into a NumPy ndarray, accessing its rows becomes much faster.
+</font>
+
+---
+
+## 2. Data Formats [9]
+
 ### Text Versus Binary Format
 
 - `CSV` and `JSON` are _text files_, whereas `Parquet` files are _binary files_
 
 - Binary files are more compact
+
+* AWS recommends using the Parquet format because “the Parquet format is up to __2x faster to unload and consumes up to 6x less storage__ in Amazon S3, compared to text formats.”
 
 ---
 
@@ -205,9 +220,27 @@ Data models describe <b>how data is represented</b>. Consider cars in the real w
 
 ## 3. Data Models [1]
 
-### Relational Modeld
+### Relational Model
+<font size = 5>
+Relational models are among the most persistent ideas in computer science. Invented by Edgar F. Codd in 1970,9 the relational model is still going strong today, even getting more popular.
+ 
+> data is organized into relations; each relation is a set of tuples. A table is an accepted visual representation of a relation, and each row of a table makes up a tuple
+
+</font>
+
+![](fig34.png)
 
 ---
+
+## 3. Data Models [2]
+
+### Relational Model
+
+It’s often desirable for relations to be normalized. Data normalization can follow normal forms such as the first normal form (1NF), second normal form (2NF), etc.,
+
+---
+
+
 
 ## 4. Data Storage Engines and Processing
 
