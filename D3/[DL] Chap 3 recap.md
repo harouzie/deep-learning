@@ -85,9 +85,8 @@ An ML system can work with data from many different sources. They have different
 
 ## 2. Data Formats
 
-<font size="5">
 Since your data comes from multiple sources with different access patterns, storing your data isn’t always straightforward and, for some cases, can be costly. It’s important to think about how the data will be used in the future so that the format you use will make sense.
-</font>
+
 
 ![bg right:33%](https://images.unsplash.com/photo-1480843669328-3f7e37d196ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80)
 
@@ -240,6 +239,18 @@ It’s often desirable for relations to be normalized. Data normalization can fo
 
 ---
 
+## 3. Data Models [x1]
+
+### No SQL
+
+---
+
+## 3. Data Models [x2]
+
+### Structured Versus Unstructured Data
+
+---
+
 ## 4. Data Storage Engines and Processing
 
 <font size=5>
@@ -273,7 +284,7 @@ Typically, there are two types of workloads that databases are optimized for, __
 
 __Transactional and Analytical Processing__
 
-- The transactions are inserted as they are generated, and occasionally updated when something changes, or deleted when they are no longer needed.19 This type of processing is known as _online transaction processing_ (OLTP).
+- The transactions are inserted as they are generated, and occasionally updated when something changes, or deleted when they are no longer needed. This type of processing is known as _online transaction processing_ (OLTP).
 
 > These transactions need to be processed __fast (low latency)__ and the processing method needs to have __high availability__. Besides, if your system __can’t process__ a transaction, that transaction __won’t go through__.
 
@@ -283,7 +294,43 @@ __Transactional and Analytical Processing__
 
 __Transactional and Analytical Processing__
 
+Transactional databases are designed to process online transactions and satisfy the low latency, high availability requirements. When people hear transactional databases, they usually think of ACID (atomicity, consistency, isolation, durability).
 
+![bg right:30%](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80)
+
+---
+
+## 4. Data Storage Engines and Processing [4]
+
+__Transactional and Analytical Processing__ [ACID]
+
+_Atomicity_
+> To guarantee that all the steps in a transaction are completed successfully as a group. If any step in the transaction fails, all other steps must fail also. For example, if a user’s payment fails, you don’t want to still assign a driver to that user.
+
+_Consistency_
+> To guarantee that all the transactions coming through must follow predefined rules. For example, a transaction must be made by a valid user.
+
+---
+
+## 4. Data Storage Engines and Processing [5]
+
+__Transactional and Analytical Processing__ [ACID]
+
+_Isolation_
+>To guarantee that two transactions happen at the same time as if they were isolated. Two users accessing the same data won’t change it at the same time. For example, you don’t want two users to book the same driver at the same time.
+
+_Durability_
+>To guarantee that once a transaction has been committed, it will remain committed even in the case of a system failure. For example, after you’ve ordered a ride and your phone dies, you still want your ride to come.
+
+---
+
+## 4. Data Storage Engines and Processing [6]
+
+__Transactional and Analytical Processing__
+
+However, transactional databases don’t necessarily need to be ACID, and some developers find ACID to be too restrictive. According to Martin Kleppmann, “systems that do not meet the ACID criteria are sometimes called __BASE__, which stands for _Basically Available, Soft state, and Eventual consistency_. This is even more vague than the definition of ACID
+
+![bg left:30%](https://images.unsplash.com/photo-1676957739037-29853385aa88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)
 
 ---
 
@@ -291,29 +338,68 @@ __Transactional and Analytical Processing__
 
 ### ETL: Extract, Transform, and Load
 
-
+In the early days of the relational data model, data was mostly structured. When data is extracted from different sources, it’s first transformed into the desired format before being loaded into the target destination such as a database or a data warehouse. This process is called ETL, which stands for extract, transform, and load.
 
 ---
 
 ## 5. Modes of Dataflow
 
+In this chapter, we’ve been discussing data formats, data models, data storage, and processing for data used within the context of a single process. Most of the time, in production, you don’t have a single process but multiple. A question arises: how do we pass data between different processes that don’t share memory?
+
+![bg left:40%](https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)
+
+---
+
+## 5. Modes of Dataflow [1]
+
+When data is passed from one process to another, we say that the data flows from one process to another, which gives us a dataflow. There are three main modes of dataflow: 
+- Data passing through databases 
+- Data passing through services using requests such as the requests provided by REST and RPC APIs (e.g., POST/GET requests) 
+- Data passing through a real-time transport like Apache Kafka and Amazon Kinesis
+
+---
+
+## 5. Modes of Dataflow [2]
+
+### [1] Data Passing Through Databases
+
+- The easiest way to pass data between two processes is through databases. For example, to pass data from process A to process B, process A can write that data into a database, and process B simply reads from that database.
+
+- However, doesn’t always work because of two reasons.
+
+    > First, it requires that both processes must be able to access the same database. This might be infeasible, especially if the two processes are run by two different companies.
+
+    > Second, it requires both processes to access data from databases, and read/write from databases can be slow, making it unsuitable.
+
+---
+
+## 5. Modes of Dataflow [3]
+
+### Data Passing Through Services
+
+---
+
+## 5. Modes of Dataflow [x]
+
+### Data Passing Through Real-Time Transport
+
 ---
 
 ## 6. Batch Processing Versus Stream Processing
 
-<font size="5">
-Once your data arrives in data storage engines like databases, data lakes, or data warehouses, it becomes <b>historical data</b>. This is opposed to <b>streaming data</b> (data that is still streaming in). Historical data is often processed in batch jobs—jobs that are kicked off <i>periodically</i>
-</font>
-
-![bg right:33%](https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+Once your data arrives in data storage engines like databases, data lakes, or data warehouses, it becomes <b>historical data</b>. This is opposed to <b>streaming data</b> (data that is still streaming in). Historical data is often processed in batch jobs—jobs that are kicked off <i>periodically</i>.
 
 > Read more at [Introduction to streaming for data scientists | Chip Huyen Blog](https://huyenchip.com/2022/08/03/stream-processing-for-data-scientists.html)
+
+![bg right:33%](https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
 
 ---
 
 ## 6. Batch Processing Versus Stream Processing [1]
 
+- When data is processed in batch jobs, we refer to it as __batch processing__. Batch processing has been a research subject for many decades, and companies have come up with distributed systems like MapReduce and Spark to process batch data efficiently. 
 
+- When you have data in real-time transports like _Apache Kafka_ and _Amazon Kinesis_, we say that you have streaming data. __Stream processing__ refers to doing computation on streaming data. Computation on streaming data can also be kicked off periodically, but the periods are usually much shorter than the periods for batch jobs (e.g., every five minutes instead of every day).
 
 ---
 
