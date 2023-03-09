@@ -334,11 +334,21 @@ However, transactional databases don’t necessarily need to be ACID, and some d
 
 ---
 
-## 4. Data Storage Engines and Processing [x]
+## 4. Data Storage Engines and Processing [7]
 
 ### ETL: Extract, Transform, and Load
 
-In the early days of the relational data model, data was mostly structured. When data is extracted from different sources, it’s first transformed into the desired format before being loaded into the target destination such as a database or a data warehouse. This process is called ETL, which stands for extract, transform, and load.
+In the early days of the relational data model, data was mostly structured. When data is _extracted_ from different sources, it’s first _transformed_ into the desired format before being _loaded_ into the target destination such as a database or a data warehouse. This process is called _ETL_, which stands for extract, transform, and load.
+
+---
+
+## 4. Data Storage Engines and Processing [8]
+
+### ETL: Extract, Transform, and Load
+
+Extract is extracting the data you want from all your data sources. Some of them will
+be corrupted or malformatted. In the extracting phase, you need to validate your data
+and reject the data that doesn’t meet your requirements.
 
 ---
 
