@@ -53,7 +53,7 @@ As you can see from the list that all the 3 transformers are encoder-decoder bas
 
 ### __Datasets__
 
-#### __1. PAWS (Paraphrase Adversaries from Word Scrambling)__
+#### __1. [PAWS](https://huggingface.co/datasets/paws) (Paraphrase Adversaries from Word Scrambling)__
 
 This dataset contains 108,463 human-labeled and 656k noisily labeled pairs that feature the importance of modeling structure, context, and word order information for the problem of paraphrase identification. The dataset has two subsets, one based on Wikipedia and the other one based on the Quora Question Pairs (QQP) dataset.
 
@@ -171,9 +171,19 @@ The SNLI dataset has 3 splits: _train_, _validation_, and _test_. All of the exa
 
 ### __Training strategy__
 
-| col1  | col2|
+<!-- | col1  | col2|
 | :--:     | --: |
-| &#9745;  | random text is here  |
+| &#9745;  | random text is here  | -->
+
+## Our models
+
+| index | model  | dataset | objective |
+| :---: | :-----: |  :-----:  | :--------- |
+| [1]   | `bart-base` | `paws-unlabeled` | Learning how to paraphrasing sentences in a simple way - scramble give words to address a new outcome |
+| [2]   | `bart-base` | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on|
+
+
+
 
 ## References
 
