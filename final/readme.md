@@ -55,7 +55,7 @@ As you can see from the list that all the 3 transformers are encoder-decoder bas
 
 #### __1. PAWS (Paraphrase Adversaries from Word Scrambling)__
 
-    This dataset contains 108,463 human-labeled and 656k noisily labeled pairs that feature the importance of modeling structure, context, and word order information for the problem of paraphrase identification. The dataset has two subsets, one based on Wikipedia and the other one based on the Quora Question Pairs (QQP) dataset.
+This dataset contains 108,463 human-labeled and 656k noisily labeled pairs that feature the importance of modeling structure, context, and word order information for the problem of paraphrase identification. The dataset has two subsets, one based on Wikipedia and the other one based on the Quora Question Pairs (QQP) dataset.
 
 Column Name   | Data
 :------------ | :--------------------------
@@ -132,9 +132,9 @@ Data Splits
 
 The SNLI corpus (version 1.0) is a collection of __570k human-written English sentence pairs manually labeled for balanced classification with the labels entailment__, contradiction, and neutral, supporting the task of natural language inference (NLI), also known as recognizing textual entailment (RTE).
 
-## Dataset Structure
+Dataset Structure
 
-### Data Instances
+Data Instances
 
 For each instance, there is a string for the premise, a string for the hypothesis, and an integer for the label. Note that each premise may appear three times with a different hypothesis and label. See the [SNLI corpus viewer](https://huggingface.co/datasets/viewer/?dataset=snli) to explore more examples.
 
@@ -153,13 +153,13 @@ The average token count for the premises and hypotheses are given below:
 | Premise    | 14.1             |
 | Hypothesis | 8.3              |
 
-### Data Fields
+Data Fields
 
 - `premise`: a string used to determine the truthfulness of the hypothesis
 - `hypothesis`: a string that may be true, false, or whose truth conditions may not be knowable when compared to the premise
 - `label`: an integer whose value may be either _0_, indicating that the hypothesis entails the premise, _1_, indicating that the premise and hypothesis neither entail nor contradict each other, or _2_, indicating that the hypothesis contradicts the premise. Dataset instances which don't have any gold label are marked with -1 label. Make sure you filter them before starting the training using `datasets.Dataset.filter`.
 
-### Data Splits
+Data Splits
 
 The SNLI dataset has 3 splits: _train_, _validation_, and _test_. All of the examples in the _validation_ and _test_ sets come from the set that was annotated in the validation task with no-consensus examples removed. The remaining multiply-annotated examples are in the training set with no-consensus examples removed. Each unique premise/caption shows up in only one split, even though they usually appear in at least three different examples.
 
