@@ -177,11 +177,11 @@ The SNLI dataset has 3 splits: _train_, _validation_, and _test_. All of the exa
 
 ## Our models
 
-| index | model  | dataset | objective |
-| :---: | :-----: |  :-----:  | :--------- |
-| [1]   | `bart-base` | `paws-unlabeled` | Learning how to paraphrasing sentences in a simple way - scramble give words to address a new outcome |
-| [2]   | `bart-base` | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on|
-
+| index | model architecture  | dataset | objective | repo on HF |
+| :---: | :--------------: |  :-----:  | :--------- |   :-----:  |
+| [1]   | `bart-base`      | `paws-unlabeled` | Learning how to paraphrasing sentences in a simple way - scramble give words to address a new outcome |     |
+| [2]   | `bart-base`      | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on|   |
+ 
 
 
 
