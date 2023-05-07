@@ -185,17 +185,17 @@ The SNLI dataset has 3 splits: _train_, _validation_, and _test_. All of the exa
 | id | model HF repository  | datasets | objective note | code |
 | :---: | :--------------: |  :-----:  | :--------- |   :-----:  |
 | [1]   | [`bart-paws-unlabeled`](https://huggingface.co/harouzie/bart-base-paws_unlabeled)      | `paws-unlabeled` | Learning how to paraphrasing sentences in a simple way - scramble give words to address a new outcome |  [code](https://github.com/harouzie/deep-learning/blob/master/final/%5BDL%5D%20bart-paws-unlabeled.ipynb)   |
-| [2]   | [`bart-qqp-paws`](https://huggingface.co/harouzie/bart-base-qqp-paws)      | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on| [code]()  |
-| [3]   | [`bart-base-paraphrase`](https://huggingface.co/harouzie/bart-base-paraphrase)      | `paws-unlabeled`, `qqp`, `mnli`, `snli` | Natural language understanding mixin in| [code]()  |
-| [4]   | [`bart-base-paranmt50m`](https://huggingface.co/harouzie/t5-base-paranmt50m)      | `paranmt50m` | paraphrase dataset | [code]()  |
-| [5]   | [`bart-base-paraphrase-v1`](https://huggingface.co/harouzie/bart-base-paraphrase-v1)      | `paranmt50m`, `paws-unlabeled`, `qqp`, `mnli`, `snli`| full 5 datasets | [code]()  |
+| [2]   | [`bart-qqp-paws`](https://huggingface.co/harouzie/bart-base-qqp-paws)      | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on| [code](https://github.com/harouzie/deep-learning/blob/master/final/%5BDL%5D%20bart-qqp-paws.ipynb)  |
+| [3]   | [`bart-base-paraphrase`](https://huggingface.co/harouzie/bart-base-paraphrase)      | `paws-unlabeled`, `qqp`, `mnli`, `snli` | Natural language understanding mixin in| [code](https://github.com/harouzie/deep-learning/blob/master/final/%5BDL%5D%20bart-nli-paws-qqp.ipynb)  |
+| [4]   | [`bart-base-paranmt50m`](https://huggingface.co/harouzie/t5-base-paranmt50m)      | `paranmt50m` | paraphrase dataset | [code](https://github.com/harouzie/deep-learning/blob/master/final/%5BDL%5D%20bart-base-paranmt50m.ipynb)  |
+| [5]   | [`bart-base-paraphrase-v1`](https://huggingface.co/harouzie/bart-base-paraphrase-v1)      | `paranmt50m`, `paws-unlabeled`, `qqp`, `mnli`, `snli`| full 5 datasets | [TBD]()  |
 
 ### __T5 variants__
 
 | id | model architecture  | dataset | objective note | code |
 | :---: | :--------------: |  :-----:  | :--------- |   :-----:  |
-| [1]   | [`t5-base-paranmt50m`](https://huggingface.co/harouzie/t5-base-paranmt50m)      | `paranmt50m` | paraphrase dataset | [code]()  |
-| [2]   | [`t5-paraphrase`](https://huggingface.co/harouzie/t5-base-paranmt50m)      | `paranmt50m`, `paws-unlabeled`, `qqp`, `mnli`, `snli`| full 5 datasets | [code]()  |
+| [1]   | [`t5-base-paranmt50m`](https://huggingface.co/harouzie/t5-base-paranmt50m)      | `paranmt50m` | paraphrase dataset | [code](https://github.com/harouzie/deep-learning/blob/master/final/%5BDL%5D%20t5-base-paranmt50m.ipynb)  |
+| [2]   | [`t5-paraphrase`](https://huggingface.co/harouzie/t5-base-paranmt50m)      | `paranmt50m`, `paws-unlabeled`, `qqp`, `mnli`, `snli`| full 5 datasets | [TBD]()  |
 
 ### __PEGASUS variants__
 
