@@ -176,12 +176,13 @@ The SNLI dataset has 3 splits: _train_, _validation_, and _test_. All of the exa
 | &#9745;  | random text is here  | -->
 
 ## Our models
-
-| index | model architecture  | dataset | objective | repo on HF |
+Prototypes
+| id | model architecture  | dataset | objective | code |
 | :---: | :--------------: |  :-----:  | :--------- |   :-----:  |
-| [1]   | `bart-base`      | `paws-unlabeled` | Learning how to paraphrasing sentences in a simple way - scramble give words to address a new outcome |     |
-| [2]   | `bart-base`      | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on|   |
- 
+| [1]   | [`bart-paws-unlabeled`](https://huggingface.co/harouzie/bart-base-paws_unlabeled)      | `paws-unlabeled` | Learning how to paraphrasing sentences in a simple way - scramble give words to address a new outcome |  TBD   |
+| [2]   | [`bart-qqp-paws`](https://huggingface.co/harouzie/bart-base-qqp-paws)      | `paws-unlabeled`, `qqp` | Adding ability to paraphrasing question, giving the model a diversity of sentence structure to work on| TBD  |
+| [3]   | [`bart-base-paraphrase`](https://huggingface.co/harouzie/bart-base-paraphrase)      | `paws-unlabeled`, `qqp`, `mnli`, `snli` | | TBD  |
+| [4]   | [`bart-base-paranmt50m`](https://huggingface.co/harouzie/bart-base-paranmt50m)      | `paranmt50m` | | TBD  |
 
 
 
